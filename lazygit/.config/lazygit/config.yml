@@ -1,0 +1,81 @@
+gui:
+
+  scrollHeight: 2
+  scrollPastBottom: true
+  scrollOffMargin: 2
+  scrollOffBehavior: margin
+  tabWidth: 2
+  mouseEvents: true
+  wrapLinesInStagingView: true
+  sidePanelWidth: 0.25
+  expandFocusedSidePanel: true
+  expandedSidePanelWeight: 2
+  mainPanelSplitMode: flexible
+  enlargedSideViewLocation: left
+  showFileTree: true
+  showCommandLog: true
+  commandLogSize: 4
+  showBottomLine: true
+  showPanelJumps: true
+  showListFooter: true
+  showBranchCommitHash: true
+  showDivergenceFromBaseBranch: arrowAndNumber
+  nerdFontsVersion: "3"
+  showFileIcons: true
+  commitAuthorShortLength: 2
+  commitAuthorLongLength: 17
+  commitHashLength: 8
+  screenMode: normal
+  border: rounded
+  animateExplosion: true
+  portraitMode: auto
+  filterMode: substring
+  spinner:
+    frames: ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏']
+    rate: 80
+  statusPanelView: allBranchesLog
+  switchToFilesAfterStashPop: true
+  switchToFilesAfterStashApply: true
+  switchTabsWithPanelJumpKeys: true
+  skipDiscardChangeWarning: false
+  skipNoStagedFilesWarning: false
+  skipStashWarning: false
+  showRandomTip: false
+  language: auto
+  timeFormat: "02 Jan 06"
+  shortTimeFormat: "3:04PM"
+  theme:
+    activeBorderColor: [cyan, bold]
+    inactiveBorderColor: [default]
+    searchingActiveBorderColor: [green, bold]
+    optionsTextColor: [blue]
+    selectedLineBgColor: [blue]
+    inactiveViewSelectedLineBgColor: [bold]
+    cherryPickedCommitFgColor: [magenta]
+    cherryPickedCommitBgColor: [black]
+    markedBaseCommitFgColor: [blue]
+    markedBaseCommitBgColor: [yellow]
+    unstagedChangesColor: [red]
+    defaultFgColor: [default]
+
+git:
+  paging:
+    colorArg: always
+    pager: ""
+    useConfig: true
+  commit:
+    signOff: false
+    autoWrapCommitMessage: true
+    autoWrapWidth: 72
+  merging:
+    manualCommit: true
+    args: ""
+    squashMergeMessage: "Squash merge {{selectedRef}} into {{currentBranch}}"
+  mainBranches:
+    - main
+    - master
+  skipHookPrefix: "WIP"
+  autoFetch: true
+  autoRefresh: true
+  autoForwardBranches: onlyMainBranches
+
