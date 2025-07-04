@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# Save first argument
+cmd="$1"
+shift
+
+case "$cmd" in
+    -S)
+        sudo dnf install "$@"
+        ;;
+    -R)
+        sudo dnf remove "$@"
+        ;;
+    -Sy)
+        sudo dnf check-update
+        ;;
+    -Syu)
+        sudo dnf upgrade "$@"
+        ;;
+    -Q)
+        # List installed packages
+        if [[ "$1" == "-i" ]]; then
+            shift
+            sudo dnf info "$@"
+        else
+            sudo dnf list installed "$@"
+        fi
+        ;;
+    -Ss)
+        sudo dnf search "$@"
+        ;;
+    -Si)
+        sudo dnf info "$@"
+        ;;
+    *)
+        # Fallback to normal dnf
+        sudo dnf "$cmd" "$@"
+        ;;
+esac
+
