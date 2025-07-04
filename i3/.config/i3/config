@@ -1,0 +1,108 @@
+# Set font
+font pango:JetBrains Mono 10
+default_border none
+
+#exec --no-startup-id feh --bg-fill /home/muxee/Pictures/dinoDesktop.jpg
+#exec --no-startup-id feh --bg-fill /home/muxee/Downloads/913218.png
+#exec --no-startup-id feh --bg-fill /home/muxee/Downloads/nimgirl.png
+#exec --no-startup-id feh --bg-fill /home/muxee/Downloads/helpme.jpg
+#exec --no-startup-id feh --bg-fill /home/muxee/Downloads/darkforest.png
+exec --no-startup-id feh --bg-fill /home/muxee/Downloads/cozy.png
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id picom --config $HOME/.config/picom/picom.conf --daemon
+exec --no-startup-id xsetroot -cursor_name Bibata-Modern-Ice
+# Set mod key to Mod4 (usually the "Windows" key)
+set $mod Mod4
+
+# Toggle Polybar
+bindsym $mod+p exec --no-startup-id ~/.scripts/toggle_polybar.sh
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart 
+
+# Start terminal with mod+Return
+bindsym $mod+Return exec kitty 
+
+# Close focused window with mod+Shift+q
+bindsym $mod+q kill
+
+# Launch dmenu with mod+d
+bindsym $mod+d exec dmenu_run
+
+bindsym $mod+Ctrl+Up resize grow height 10 px
+bindsym $mod+Ctrl+Down resize shrink height 10 px
+bindsym $mod+Ctrl+Left resize shrink width 10 px
+bindsym $mod+Ctrl+Right resize grow width 10 px
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# Vertical split then launch terminal
+bindsym $mod+bar split h; exec kitty
+# Horizontal split then launch terminal
+bindsym $mod+minus split v; exec kitty
+
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# Move focus between displays
+bindsym $mod+Ctrl+j focus output left
+bindsym $mod+Ctrl+l focus output right
+
+# Turn off laptop display, use second monitor
+bindsym $mod+Shift+x exec "xrandr --output eDP-1 --off --output DP-1 --auto"
+# Restore laptop display and use second monitor
+bindsym $mod+Shift+z exec "xrandr --output eDP-1 --auto --output DP-1 --off"
+
+# Focus windows using Mod+h, Mod+j, Mod+k, Mod+l
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Move focused window using Mod+Shift+h/j/k/l
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+default_border pixel 0
+default_floating_border pixel 0
+
+# Outer gaps (space between windows and screen edge)
+gaps outer 5
+
+# Inner gaps (space between windows)
+gaps inner 9
+
