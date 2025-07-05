@@ -1,0 +1,5 @@
+# Load X resources to apply cursor theme and other X settings
+xrdb -merge ~/.Xresources
+setxkbmap -option caps:swapescape
+
+

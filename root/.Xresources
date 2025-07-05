@@ -1,0 +1,7 @@
+Xcursor.theme: Bibata-Modern-Ice
+
+XScreenSaver*timeout: 0              // Disable screen saver timeout
+XScreenSaver*cycleInterval: 0         // Disable screen saver cycling
+XScreenSaver*preferSync: true         // Ensure synchronization with your display refresh
+
+
