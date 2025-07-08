@@ -2,12 +2,7 @@
 font pango:JetBrains Mono 10
 default_border none
 
-#exec --no-startup-id feh --bg-fill /home/muxee/Pictures/dinoDesktop.jpg
-#exec --no-startup-id feh --bg-fill /home/muxee/Downloads/913218.png
-#exec --no-startup-id feh --bg-fill /home/muxee/Downloads/nimgirl.png
-#exec --no-startup-id feh --bg-fill /home/muxee/Downloads/helpme.jpg
-#exec --no-startup-id feh --bg-fill /home/muxee/Downloads/darkforest.png
-exec --no-startup-id feh --bg-fill /home/muxee/Downloads/cozy.png
+exec --no-startup-id feh --bg-fill ~/dotfiles/cozy.png
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id picom --config $HOME/.config/picom/picom.conf --daemon
 exec --no-startup-id xsetroot -cursor_name Bibata-Modern-Ice
