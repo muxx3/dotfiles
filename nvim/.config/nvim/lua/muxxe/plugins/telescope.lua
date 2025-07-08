@@ -56,10 +56,19 @@ local function create_picker_with_tmux(opts)
   builtin.find_files(opts)
 end
 
+-- 🗂 Git-Repos
+vim.keymap.set("n", "<leader>pr", function()
+  create_picker_with_tmux({
+    find_command = {
+      "fd", "--type", "f", "--hidden", ".", vim.fn.expand("~/Desktop/My-Repos"),
+    },
+    prompt_title = "Search My Git Repos",
+  })
+end, { desc = "Find files in ~/Desktop/My-Repos" })
+
 -- 🗂 Desktop
 vim.keymap.set("n", "<leader>pd", function()
   create_picker_with_tmux({
-
     find_command = {
       "fd", "--type", "f", "--hidden", ".", vim.fn.expand("~/Desktop"),
     },
