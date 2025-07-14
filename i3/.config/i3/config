@@ -12,6 +12,9 @@ set $mod Mod4
 # Toggle Polybar
 bindsym $mod+p exec --no-startup-id ~/.scripts/toggle_polybar.sh
 
+# Toggle Picom
+bindsym $mod+o exec --no-startup-id ~/.scripts/toggle_picom.sh
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
