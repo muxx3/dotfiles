@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/muxee/dotfiles/cozy.png' 
+feh --no-fehbg --bg-fill '/home/muxee/dotfiles/dark_hour_landscape.jpg' 
