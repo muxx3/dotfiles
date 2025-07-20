@@ -5,7 +5,7 @@ set -gx PATH /usr/sbin $HOME/.local/bin $PATH
 bind \cd 'commandline -f repaint'
 set -g fish_exit_on_eof 0
 
-alias fsf="fastfetch --config ~/.config/fastfetch/config.jsonc"
+alias ff="fastfetch --config ~/.config/fastfetch/config.jsonc"
 alias c="clear"
 alias r="source ~/.config/fish/config.fish"
 alias rb="source ~/.config/fish/conf.d/bobthefish.fish"
