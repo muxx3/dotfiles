@@ -30,6 +30,13 @@ function obsidian
     sleep 1
     i3-msg [con_mark="obsidian_launcher"] kill
 end
+# function to open mechvibes
+function keyboard
+    i3-msg mark mech_launcher
+    ~/AppImages/Mechvibes-2.3.6-hotfix.AppImage --no-sandbox --disable-gpu & disown
+    sleep 1
+    i3-msg [con_mark="mech_launcher"] kill
+end
 
 
 # Vi keybindings (enables ESC and modes)
