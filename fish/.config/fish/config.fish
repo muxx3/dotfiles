@@ -26,10 +26,11 @@ set -gx FZF_DEFAULT_OPTS "--height 40% --layout=default --border --color=hl:#2dd
 # function to open obsidian
 function obsidian
     i3-msg mark obsidian_launcher
-    ~/Downloads/Obsidian-1.8.10.AppImage --no-sandbox --disable-gpu & disown
+    ~/AppImages/Obsidian-1.8.10.AppImage --no-sandbox --disable-gpu & disown
     sleep 1
     i3-msg [con_mark="obsidian_launcher"] kill
 end
+
 # function to open mechvibes
 function keyboard
     i3-msg mark mech_launcher
