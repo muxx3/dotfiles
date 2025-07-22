@@ -47,3 +47,7 @@ fish_add_path ~/.millennium/ext/bin
 fish_add_path ~/.cargo/bin
 fish_add_path ~/.local/share/solana/install/active_release/bin
 fish_add_path ~/.scripts
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
