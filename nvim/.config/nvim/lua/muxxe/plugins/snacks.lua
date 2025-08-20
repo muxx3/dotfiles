@@ -1,6 +1,25 @@
 -- ~/.config/nvim/lua/muxxe/plugins/snacks.lua
 
 local persist = require("muxxe.plugins.snacks_theme_persist")
+
+-- function to apply your custom highlights
+local function apply_custom_highlights()
+    vim.api.nvim_set_hl(0, "NormalFloat", { fg = "#ffffff", bg = "none" })
+    vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#ffffff", bg = "none" })
+    vim.api.nvim_set_hl(0, "Pmenu", { fg = "#ffffff", bg = "none" })
+    vim.api.nvim_set_hl(0, "PmenuSel", { fg = "#000000", bg = "#ffffff" })
+    vim.api.nvim_set_hl(0, "PmenuBorder", { fg = "#ffffff", bg = "none" })
+    vim.api.nvim_set_hl(0, "Visual", { fg = "#000000", bg = "#ffffff" })
+end
+
+-- apply custom highlights automatically on any colorscheme change
+vim.api.nvim_create_autocmd("ColorScheme", {
+    pattern = "*",
+    callback = function()
+        apply_custom_highlights()
+    end,
+})
+
 return {
     opts = function()
         return {
