@@ -4,7 +4,7 @@
 current=$(tmux display-message -p '#S')
 
 # List sessions and select one
-target=$(tmux list-sessions -F '#S' | fzf --prompt="Kill session > ")
+target=$(tmux list-sessions -F '#S' | fzf --prompt="Kill Session > ")
 [ -z "$target" ] && exit
 
 # If you're killing the current session, pick another one to switch to
