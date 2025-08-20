@@ -89,10 +89,26 @@ end)
 vim.api.nvim_create_autocmd("ColorScheme", {
     pattern = "*",
     callback = function()
+        -- Main editor transparency
         vim.api.nvim_set_hl(0, "Normal",         { bg = "none" })
-        vim.api.nvim_set_hl(0, "NormalFloat",    { bg = "none" })
-        vim.api.nvim_set_hl(0, "FloatBorder",    { bg = "none" })
         vim.api.nvim_set_hl(0, "TelescopeNormal",{ bg = "none" })
         vim.api.nvim_set_hl(0, "TelescopeBorder",{ bg = "none" })
+        -- Floating windows: transparent background, white text, white borders
+        vim.api.nvim_set_hl(0, "FloatBorder",    { fg = "#ffffff", bg = "none" })
+        vim.api.nvim_set_hl(0, "NormalFloat",    { fg = "#ffffff", bg = "none" })
+        -- Completion menus: transparent with white text
+        vim.api.nvim_set_hl(0, "Pmenu",          { fg = "#ffffff", bg = "none" })
+        vim.api.nvim_set_hl(0, "PmenuSel",       { fg = "#000000", bg = "#ffffff" })  -- Inverted for selection
+        vim.api.nvim_set_hl(0, "PmenuBorder",    { fg = "#ffffff", bg = "none" })
+        -- Diagnostic floating windows
+        vim.api.nvim_set_hl(0, "DiagnosticFloatingError",   { fg = "#ffffff", bg = "none" })
+        vim.api.nvim_set_hl(0, "DiagnosticFloatingWarn",    { fg = "#ffffff", bg = "none" })
+        vim.api.nvim_set_hl(0, "DiagnosticFloatingInfo",    { fg = "#ffffff", bg = "none" })
+        vim.api.nvim_set_hl(0, "DiagnosticFloatingHint",    { fg = "#ffffff", bg = "none" })
+        -- Mason UI
+        vim.api.nvim_set_hl(0, "MasonNormal",    { fg = "#ffffff", bg = "none" })
+        vim.api.nvim_set_hl(0, "MasonHeader",    { fg = "#ffffff", bg = "none" })
+        -- Lazy UI
+        vim.api.nvim_set_hl(0, "LazyNormal",     { fg = "#ffffff", bg = "none" })
     end,
 })
