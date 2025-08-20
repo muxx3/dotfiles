@@ -2,6 +2,33 @@
 -- │  [ muxxe ] Neovim Settings & Autocommands          │
 -- ╰────────────────────────────────────────────────────╯
 
+
+-- Configure LSP floating windows (this fixes Shift+K hover)
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+  border = "single"
+})
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+  border = "single"
+})
+
+-- Configure diagnostic floating windows
+vim.diagnostic.config({
+  float = { 
+    border = "single",
+    header = "",
+    prefix = "",
+  }
+})
+
+-- Override default floating window creation
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+  opts = opts or {}
+  opts.border = opts.border or "single"
+  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
 -- ╭──────────────────────────────────╮
 -- │    Environment and UI Basics     │
 -- ╰──────────────────────────────────╯
