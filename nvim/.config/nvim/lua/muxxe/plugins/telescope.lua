@@ -56,7 +56,7 @@ local function create_picker_with_tmux(opts)
   builtin.find_files(opts)
 end
 
--- 🗂 Git-Repos
+-- Git-Repos
 vim.keymap.set("n", "<leader>pr", function()
   create_picker_with_tmux({
     find_command = {
@@ -66,7 +66,7 @@ vim.keymap.set("n", "<leader>pr", function()
   })
 end, { desc = "Find files in ~/Desktop/My-Repos" })
 
--- 🗂 Desktop
+-- Desktop
 vim.keymap.set("n", "<leader>pd", function()
   create_picker_with_tmux({
     find_command = {
@@ -76,7 +76,7 @@ vim.keymap.set("n", "<leader>pd", function()
   })
 end, { desc = "Find files in ~/Desktop" })
 
--- ⚙️ Config & Scripts
+-- Config & Scripts
 vim.keymap.set("n", "<leader>pc", function()
   create_picker_with_tmux({
     find_command = {
@@ -86,7 +86,7 @@ vim.keymap.set("n", "<leader>pc", function()
   })
 end, { desc = "Find configs and scripts in dofiles folder" })
 
--- 🗃 Project files (buffer dir logic)
+-- Project files (buffer dir logic)
 vim.keymap.set("n", "<leader>pf", function()
   local dir = vim.fn.expand("%:p")
   local stat = vim.loop.fs_stat(dir)
@@ -104,7 +104,7 @@ vim.keymap.set("n", "<leader>pf", function()
   })
 end, { desc = "Find project files with tmux logic" })
 
--- 🔥 Git files (no tmux logic)
+-- Git files (no tmux logic)
 vim.keymap.set("n", "<leader>pg", function()
   builtin.git_files({
     cwd = project_root(),
