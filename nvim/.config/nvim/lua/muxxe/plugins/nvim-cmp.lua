@@ -1,6 +1,7 @@
 -- lua/plugins/cmp.lua
-local cmp   = require("cmp")
+local cmp = require("cmp")
 local luasnip = require("luasnip")
+
 
 cmp.setup({
   snippet = {
@@ -8,6 +9,18 @@ cmp.setup({
       luasnip.lsp_expand(args.body)
     end,
   },
+  
+  window = {
+    completion = {
+      border = "single",
+      winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+    },
+    documentation = {
+      border = "single",
+      winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
+    }
+  },
+  
   mapping = {
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -18,7 +31,6 @@ cmp.setup({
         fallback()
       end
     end, { "i", "s" }),
-
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -28,15 +40,15 @@ cmp.setup({
         fallback()
       end
     end, { "i", "s" }),
-
     ["<CR>"] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
-      select   = true,
+      select = true,
     }),
   },
+  
   sources = {
     { name = "nvim_lsp" },
-    { name = "luasnip"  },
+    { name = "luasnip" },
   },
 })
 
@@ -46,12 +58,24 @@ if cmp.setup.cmdline then
     sources = {
       { name = "cmdline" },
     },
+    window = {
+      completion = {
+        border = "single",
+        winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel",
+      }
+    }
   })
-
+  
   cmp.setup.cmdline({ "/", "?" }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
       { name = "buffer" },
     },
+    window = {
+      completion = {
+        border = "single",
+        winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel",
+      }
+    }
   })
 end
