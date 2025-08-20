@@ -39,9 +39,9 @@ M.config = function(_, opts)
 
   -- Optional: apply highlights
   vim.cmd([[
-    hi MiniFilesNormal guibg=black guifg=yellow
-    hi MiniFilesBorder guibg=black guifg=black
-    hi MiniFilesTitle guibg=black guifg=white
+    hi MiniFilesNormal guibg=black guifg=pink
+    hi MiniFilesBorder guibg=black guifg=white
+    hi MiniFilesTitle guibg=black guifg=red
   ]])
 end
 
