@@ -13,6 +13,7 @@ require("mason-lspconfig").setup ({
         "yamlls",
         "dockerls",
         "marksman",
+        "pylsp"
     },
     automatic_installation = true,
 })
