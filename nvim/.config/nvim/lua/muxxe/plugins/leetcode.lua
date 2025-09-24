@@ -5,10 +5,7 @@ return function()
     end
 
     leetcode.setup({
-        ---@type string
         arg = "leetcode.nvim",
-
-        ---@type lc.lang
         lang = "rust",
 
         cn = {
@@ -18,7 +15,7 @@ return function()
         },
 
         storage = {
-            home = vim.fn.stdpath("data") .. "/leetcode",
+            home = vim.fn.expand("~/Desktop/My-Repos/leetcode/src/problems"),
             cache = vim.fn.stdpath("cache") .. "/leetcode",
         },
 
@@ -30,7 +27,7 @@ return function()
         injector = {},
 
         cache = {
-            update_interval = 60 * 60 * 24 * 7, -- 7 days
+            update_interval = 60 * 60 * 24 * 7,
         },
 
         editor = {
@@ -41,12 +38,24 @@ return function()
         console = {
             open_on_runcode = true,
             dir = "row",
-            size = { width = "90%", height = "75%" },
-            result = { size = "60%" },
-            testcase = { virt_text = true, size = "40%" },
+            size = {
+                width = "90%",
+                height = "75%",
+            },
+            result = {
+                size = "60%",
+            },
+            testcase = {
+                virt_text = true,
+                size = "40%",
+            },
         },
 
-        description = { position = "left", width = "40%", show_stats = true },
+        description = {
+            position = "left",
+            width = "40%",
+            show_stats = true,
+        },
 
         picker = { provider = nil },
 
