@@ -59,7 +59,8 @@ require("lazy").setup({
     { "kylechui/nvim-surround", version = "^3.0.0", event = "VeryLazy", config = function() require("nvim-surround").setup({ }) end },
     { "windwp/nvim-autopairs", event = {"InsertEnter"}, dependencies = { "hrsh7th/nvim-cmp" }, config = function() require("muxxe.plugins.autopairs")() end },
     { "folke/todo-comments.nvim", event = { "BufReadPre", "BufNewFile" }, dependencies = { "nvim-lua/plenary.nvim"}, config = function() require("muxxe.plugins.todo-comments")() end },
-    { 'brianhuster/live-preview.nvim', dependencies = { 'folke/snacks.nvim', }, }
+    { 'brianhuster/live-preview.nvim', dependencies = { 'folke/snacks.nvim', }, },
+    { "kawre/leetcode.nvim", build = ":TSUpdate html", dependencies = { "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim", }, config = function() require("muxxe.plugins.leetcode")() end, }
 
 
 })
