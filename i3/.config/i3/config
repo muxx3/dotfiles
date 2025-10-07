@@ -2,7 +2,7 @@
 font pango:JetBrains Mono 10
 default_border none
 
-exec --no-startup-id feh --bg-fill ~/dotfiles/rengokubw.jpg
+exec --no-startup-id feh --bg-fill ~/dotfiles/none
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id picom --config $HOME/.config/picom/picom.conf --daemon
 exec --no-startup-id xsetroot -cursor_name Bibata-Modern-Ice
@@ -31,8 +31,8 @@ bindsym $mod+d exec dmenu_run
 
 bindsym $mod+Ctrl+Up resize grow height 10 px
 bindsym $mod+Ctrl+Down resize shrink height 10 px
-bindsym $mod+Ctrl+Left resize shrink width 10 px
-bindsym $mod+Ctrl+Right resize grow width 10 px
+bindsym $mod+Ctrl+Right resize shrink width 10 px
+bindsym $mod+Ctrl+Left resize grow width 10 px
 
 set $ws1 "1"
 set $ws2 "2"
@@ -99,8 +99,8 @@ default_border pixel 0
 default_floating_border pixel 0
 
 # Outer gaps (space between windows and screen edge)
-gaps outer 5
+gaps outer 0
 
 # Inner gaps (space between windows)
-gaps inner 9
+gaps inner 3
 
