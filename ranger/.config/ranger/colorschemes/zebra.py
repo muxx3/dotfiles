@@ -1,6 +1,7 @@
 from ranger.gui.colorscheme import ColorScheme
 from ranger.gui.color import *
 
+
 class Default(ColorScheme):
     counter = 0  # Class-level counter to alternate stripes
 
@@ -48,4 +49,3 @@ class Default(ColorScheme):
             attr |= reverse
 
         return fg, bg, attr
-
