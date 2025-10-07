@@ -24,14 +24,12 @@ require("lazy").setup({
     { "nvzone/showkeys", lazy = false, opts = require("muxxe.plugins.showkeys").opts, config = function(_, opts) require("muxxe.plugins.showkeys").config(_, opts) end },
 
     -- ───────── Development Tools ─────────
-    { "mason-org/mason.nvim", config = function() require("muxxe.plugins.mason") end },
-    { "mason-org/mason-lspconfig.nvim", dependencies = { "mason.nvim" } },
-    { "neovim/nvim-lspconfig", config = function() require("muxxe.plugins.lspconfig"); require("muxxe.plugins.diagnostics"); require("muxxe.plugins.lspkeymaps") end },
-    { "hrsh7th/nvim-cmp", dependencies = { "L3MON4D3/LuaSnip", "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-cmdline", "hrsh7th/cmp-buffer", "saadparwaiz1/cmp_luasnip" }, config = function() require("muxxe.plugins.nvim-cmp") end },
-    { "hrsh7th/cmp-nvim-lsp" },
-    { "saadparwaiz1/cmp_luasnip" },
-    { "L3MON4D3/LuaSnip", version = "v2.*", build = "make install_jsregexp" },
-    { "VonHeikemen/lsp-zero.nvim", branch = "v4.x" },
+    {
+        { "mason-org/mason.nvim", config = function() require("muxxe.plugins.mason") end },
+        { "mason-org/mason-lspconfig.nvim", dependencies = { "mason.nvim" } },
+        { "neovim/nvim-lspconfig", config = function() require("muxxe.plugins.lspconfig") require("muxxe.plugins.diagnostics") require("muxxe.plugins.lspkeymaps") end }
+        --{ "hrsh7th/nvim-cmp", dependencies = { { "L3MON4D3/LuaSnip", version = "v2.*", build = "make install_jsregexp" }, "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-cmdline", "hrsh7th/cmp-buffer", "saadparwaiz1/cmp_luasnip" }, config = function() require("muxxe.plugins.nvim-cmp") end }
+    },
 
     -- ───────── Language Specific: Rust ─────────
     { "mrcjkb/rustaceanvim", version = "^6", lazy = false, config = function() require("muxxe.plugins.rustaceanvim") end },
